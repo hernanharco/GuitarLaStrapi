@@ -69,6 +69,10 @@ module.exports = ({ env }) => {
         schema: env('DATABASE_SCHEMA', 'public'),
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      
+      migrations: {
+        tableName: 'knex_migrations'
+      }
     },
     sqlite: {
       connection: {
